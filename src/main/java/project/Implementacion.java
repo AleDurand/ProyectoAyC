@@ -2,11 +2,11 @@ package project;
 
 public class Implementacion {
 
-	protected int n;
-	protected int[] k;
+	private int n;
+	private int[] k;
 	// campos necesarios para computar y reconstruir la solución
-	int[][] comparaciones;
-	protected int[][] solucion;
+	private int[][] comparaciones;
+	private int[][] solucion;
 
 	public Implementacion(int[] k) {
 		this.n = k.length;
