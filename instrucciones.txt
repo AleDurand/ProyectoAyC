@@ -1,0 +1,36 @@
+Para la entrega del proyecto se deben implementar los métodos de la clase Implementacion
+- int costoOptimal()
+- ArbolBinario reconstruirSolucion()
+
+La clase Implementacion consta de un constructor que recibe como parámetro el arreglo
+int[] k, representando el número de accesos a cada clave.
+
+costoOptimal() debe retornar el mínimo número de accesos que logra un árbol binario de búsqueda optimal.
+reconstruirSolucion() debe retornar la solución hallada usando la clase ArbolBinario.
+
+Para la construcción de un árbol binario se utiliza el constructor
+  ArbolBinario(int raiz, ArbolBinario izquierdo, ArbolBinario derecho)
+
+Que recibe como parámetros el valor de la raíz del árbol y los subárboles izquierdo y derecho.
+Para especificar un árbol vacío se utiliza el valor null.
+
+Por ejemplo, para construir un árbol con un único nodo con valor 42, se debe invocar
+ArbolBinario(42, null, null)
+
+Para construir un árbol con raíz 1 y subárboles dados t1 y t2, se debe invocar
+ArbolBinario(1, t1, t2)
+
+El árbol siguiente
+
+   1
+  /
+ 2
+  \
+   3
+
+Puede construirse como
+
+ArbolBinario hoja, izquierdo, entero;
+hoja = new ArbolBinario(3,null,null);
+izquierdo = new ArbolBinario(2, null, hoja);
+entero = new ArbolBinario(1, izquierdo, null);

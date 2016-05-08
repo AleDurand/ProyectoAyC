@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+apply from: "$rootDir/coverage.gradle"
+ 
+sourceCompatibility = 1.8
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'ProyectoAyC',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile('commons-io:commons-io:2.5')
+    testCompile('junit:junit:4.+')
+}
+
+test {
+	
+}
+
+
+
