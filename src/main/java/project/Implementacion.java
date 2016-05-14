@@ -26,19 +26,15 @@ public class Implementacion {
 				m[i][j] = m[i][j - 1] + k[j - 1];
 			}
 		}
-		for (int j = 1; j < n + 1; j++) {
-			comparaciones[j - 1][j] = m[j - 1][j];
-			solucion[j - 1][j] = j;
-		}
-		for (int d = 2; d < n + 1; d++) {
+		for (int d = 1; d < n + 1; d++) {
 			for (int j = d; j < n + 1; j++) {
 				int i = j - d;
 				int min = Integer.MAX_VALUE;
-				for (int k = i + 1; k < j + 1; k++) {
-					int aux = comparaciones[i][k - 1] + comparaciones[k][j];
+				for (int x = i + 1; x < j + 1; x++) {
+					int aux = comparaciones[i][x - 1] + comparaciones[x][j];
 					if (aux < min) {
 						min = aux;
-						solucion[i][j] = k;
+						solucion[i][j] = x;
 					}
 				}
 				comparaciones[i][j] = m[i][j] + min;
@@ -51,15 +47,15 @@ public class Implementacion {
 	// Debe devolver un árbol binario optimal representado con la clase
 	// ArbolBinario
 	public ArbolBinario reconstruirSolucion() {
-		return aux(0, n);
+		return reconstruirSolucionAux(0, n);
 	}
 
-	private ArbolBinario aux(int i, int j) {
+	private ArbolBinario reconstruirSolucionAux(int i, int j) {
 		if (i == j)
 			return null;
 		else {
-			ArbolBinario hijoIzq = aux(i, solucion[i][j] - 1);
-			ArbolBinario hijoDer = aux(solucion[i][j], j);
+			ArbolBinario hijoIzq = reconstruirSolucionAux(i, solucion[i][j] - 1);
+			ArbolBinario hijoDer = reconstruirSolucionAux(solucion[i][j], j);
 			int raiz = solucion[i][j];
 			return new ArbolBinario(raiz, hijoIzq, hijoDer);
 		}
