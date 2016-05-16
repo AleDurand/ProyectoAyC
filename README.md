@@ -1,6 +1,6 @@
 # ProyectoAyC
 
-Para generar el build del proyecto es necesario ejectuar el siguiente comando:
+Para generar el build del proyecto es necesario ejecutar el siguiente comando:
 
   > ./gradlew clean build
   
