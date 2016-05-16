@@ -10,4 +10,4 @@ coverage de los tests.
 
 Los reportes son generados en la carpeta build\reports.
 
-El jar de la aplicacion se genera en la carpeta build\lib.
+El jar de la aplicacion se genera en la carpeta build\libs.
